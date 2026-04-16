@@ -1,4 +1,4 @@
-import { ArrowRight, FileText } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import styles from './Insights.module.css';
 
 const insightsData = [
@@ -39,7 +39,7 @@ export default function Insights() {
           </p>
           <a href="#" className="btn-outline" style={{ marginTop: '1.5rem' }}>すべてのインサイトを見る</a>
         </div>
-        
+
         <div className={styles.insightsList}>
           {insightsData.map((insight, idx) => (
             <div key={idx} className={styles.insightItem}>
