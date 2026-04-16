@@ -1,0 +1,131 @@
+.expertiseSection {
+  background-color: var(--color-bg);
+}
+
+.denseLayout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-gray);
+  margin-top: 2rem;
+}
+
+.sidebar {
+  border-right: 1px solid var(--color-border);
+  background-color: #fff;
+}
+
+.tabList {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.tabBtn:hover {
+  background-color: var(--color-surface-gray);
+  color: var(--color-primary);
+}
+
+.tabBtn.activeTab {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.tabIcon {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+}
+
+.tabBtn.activeTab .tabIcon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contentArea {
+  padding: 4rem;
+}
+
+.activeContent {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contentTitle {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.contentDesc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.capTitle {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.capList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+.capList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+.bullet {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 900px) {
+  .denseLayout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .contentArea {
+    padding: 2rem;
+  }
+  .capList {
+    grid-template-columns: 1fr;
+  }
+}
